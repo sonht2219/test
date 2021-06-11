@@ -6,11 +6,17 @@ use App\Services\Impls\AuthServiceImpl;
 use App\Services\Impls\CategoryServiceImpl;
 use App\Services\Impls\FileStorageServiceImpl;
 use App\Services\Impls\LoggerServiceImpl;
+use App\Services\Impls\ManufacturerServiceImpl;
+use App\Services\Impls\ManufacturingCountryServiceImpl;
+use App\Services\Impls\UnitServiceImpl;
 use App\Services\Impls\UserServiceImpl;
 use App\Services\Interfaces\AuthService;
 use App\Services\Interfaces\CategoryService;
 use App\Services\Interfaces\FileStorageService;
 use App\Services\Interfaces\LoggerService;
+use App\Services\Interfaces\ManufacturerService;
+use App\Services\Interfaces\ManufacturingCountryService;
+use App\Services\Interfaces\UnitService;
 use App\Services\Interfaces\UserService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -23,7 +29,10 @@ class AppServiceProvider extends ServiceProvider
         LoggerService::class => LoggerServiceImpl::class,
         AuthService::class => AuthServiceImpl::class,
         UserService::class => UserServiceImpl::class,
-        CategoryService::class => CategoryServiceImpl::class
+        CategoryService::class => CategoryServiceImpl::class,
+        ManufacturerService::class => ManufacturerServiceImpl::class,
+        ManufacturingCountryService::class => ManufacturingCountryServiceImpl::class,
+        UnitService::class => UnitServiceImpl::class
     ];
     /**
      * Register any application services.
