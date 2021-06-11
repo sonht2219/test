@@ -5,6 +5,7 @@ namespace App\Http\Requests\Category;
 
 
 use App\Http\Requests\Base\BaseRequest;
+use App\Rules\CategoryHierarchy;
 
 /**
  * Class CategoryRequest
@@ -23,7 +24,7 @@ class CategoryRequest extends BaseRequest
     {
         return [
             'title' => ['required', 'string', 'max:255'],
-            'parent_id' => ['nullable', 'numeric', 'exists:categories,id']
+            'parent_id' => ['nullable', 'numeric', 'exists:categories,id', new CategoryHierarchy]
         ];
     }
 }

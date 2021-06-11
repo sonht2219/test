@@ -42,6 +42,6 @@ class CategoryController extends Controller
     }
 
     public function list(): Collection {
-        return $this->categoryService->allParentCategory();
+        return $this->categoryService->allRootCategory();
     }
 }

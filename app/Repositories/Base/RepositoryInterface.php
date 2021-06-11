@@ -35,14 +35,14 @@ interface RepositoryInterface
      * @param array $attributes
      * @return mixed
      */
-    public function create(array $attributes = []);
+    public function create(array $attributes = []): Model;
 
     /**
      * @param Model $instance
      * @param array $attributes
      * @return mixed
      */
-    public function update(Model $instance, array $attributes = []);
+    public function update(Model $instance, array $attributes = []): Model;
 
     /**
      * @param $column

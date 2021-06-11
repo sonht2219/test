@@ -121,6 +121,7 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
+    'category_hierarchy' => "Danh mục chỉ có tối đa :category_hierarchy cấp",
 
     /*
     |--------------------------------------------------------------------------
@@ -152,6 +153,7 @@ return [
         'phone_number' => 'Số điện thoại',
         'name' => 'Họ tên',
         'dob' => 'Ngày sinh',
+        'parent_id' => 'Cha'
     ],
 
 ];

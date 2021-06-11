@@ -44,5 +44,5 @@ interface CategoryService
      */
     public function list(int $limit, ?string $search, ?int $status): LengthAwarePaginator;
 
-    public function allParentCategory(): Collection;
+    public function allRootCategory(): Collection;
 }

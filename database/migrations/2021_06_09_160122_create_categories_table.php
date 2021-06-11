@@ -18,7 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('slug')->unique();
             $table->string('title');
-            $table->integer('parent_id')->nullable();
+            $table->integer('parent_id')->index()->nullable();
+            $table->string('path')->index()->nullable();
             $table->tinyInteger('status')->default(CommonStatus::ACTIVE)->comment(generate_db_comment(CommonStatus::getInstances()));
             $table->timestamps();
         });

@@ -25,11 +25,19 @@ class CategoryRepositoryEloquent extends RepositoryEloquent implements CategoryR
     /**
      * @return Collection
      */
-    public function allParentCategory(): Collection
+    public function findAllRootCategory(): Collection
     {
-        return $this->model
+        return $this->model->newQuery()
             ->whereNull('parent_id')
             ->with('children.children')
+            ->get();
+    }
+
+    public function findAllChildrenOfCategory(Category $category): Collection
+    {
+        $path = $category->path;
+        return $this->model->newQuery()
+            ->where('path', 'like', "$path.%")
             ->get();
     }
 }

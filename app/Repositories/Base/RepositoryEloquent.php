@@ -93,7 +93,7 @@ abstract class RepositoryEloquent implements RepositoryInterface
      * @param array $attributes
      * @return mixed
      */
-    public function create(array $attributes = [])
+    public function create(array $attributes = []): Model
     {
         return tap($this->model->create($attributes), fn(Model $instance) => $instance->refresh());
     }
@@ -104,11 +104,11 @@ abstract class RepositoryEloquent implements RepositoryInterface
      * @return mixed|void
      * @throws RepositoryException
      */
-    public function update(Model $instance, array $attributes = [])
+    public function update(Model $instance, array $attributes = []): Model
     {
         if (!$instance->update($attributes))
             throw new RepositoryException('Update fail');
-        return $instance;
+        return $instance->refresh();
     }
 
     /**
