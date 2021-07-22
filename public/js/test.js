@@ -6,5 +6,5 @@ function test() {
         return 3;
     }
 
-    return 3;
+    return 5;
 }
